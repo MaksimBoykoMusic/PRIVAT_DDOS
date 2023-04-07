@@ -30,7 +30,7 @@ var (
 
 func init() {
 	flag.StringVar(&urlString, "u", "", "url")
-	flag.StringVar(&method, "m", "GET Автор @zemondza", "method")
+	flag.StringVar(&method, "m", "GET", "method (GET, POST, HEAD, PUT, DELETE, CONNECT, OPTIONS, TRACE, PATCH, HTTP-SYN, HTTP-SYN-TCP, SLOW, POWERSLOW, HTTPS/3, BOT-GOOGL)")
 	flag.StringVar(&proxies, "p", "", "proxies")
 	flag.DurationVar(&timeout, "t", 5*time.Second, "timeout")
 	flag.BoolVar(&allow_redirects, "r", false, "allow redirects")
@@ -43,6 +43,7 @@ func init() {
 	client = &http.Client{}
 	start_time = time.Now()
 }
+
 
 func main() {
 	var wg sync.WaitGroup
